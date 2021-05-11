@@ -1,0 +1,50 @@
+<form class="container" #myForm="ngForm" (ngSubmit)="formSubmit(myForm.value)">
+  
+  
+    <div class="form-group">
+      <label for="description">description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        placeholder="Enter yourdescription"
+        ngModel
+        name="description"
+        #description="ngModel"
+        required
+     
+      />
+      <div
+        class="errors d-flex justify-content-center"
+        *ngIf="description.touched && description.invalid"
+      >
+        <div *ngIf="description.errors?.required">*description is required*</div>
+      
+      </div>
+    </div> <div class="form-group">
+        <label for="title">title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          placeholder="Enter your title"
+          ngModel
+          name="title"
+          #title="ngModel"
+          required
+       
+        />
+        <div
+          class="errors d-flex justify-content-center"
+          *ngIf="title.touched && title.invalid"
+        >
+          <div *ngIf="title.errors?.required">*title is required*</div>
+        
+        </div>
+      </div>
+       
+    <button class="btn btn-primary " type="submit" [disabled]='myForm.invalid'>
+      submit
+    </button>
+  </form>
+

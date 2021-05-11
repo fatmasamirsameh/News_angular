@@ -1,0 +1,30 @@
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th scope="col">description</th>
+        <th scope="col">title</th>
+        <th colspan="2">Action</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let news of totalnews' >
+         <td>{{this.totalnews.indexOf(news) }}</td>
+        <td>{{news.description}}</td>
+        <td>{{news.title}}</td>
+        <td>
+          <button type="button" class="btn btn-primary btn-sm" (click)='deleteNews(news)'>Delete</button>
+      </td>
+      <td>
+        <a routerLink='/editNews/{{news._id}}'>
+            <button type="button" class="btn btn-primary btn-sm">Update</button>
+        </a>
+    </td>
+      </tr>
+     
+      
+    </tbody>
+  </table>
